@@ -1,0 +1,15 @@
+using System;
+
+namespace Day41exercise
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            string myName = "Norbi";
+
+            Console.WriteLine("Hello " + myName);
+            Console.ReadLine();  
+        }
+    }
+}

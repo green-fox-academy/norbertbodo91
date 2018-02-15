@@ -1,0 +1,30 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                int number1;
+                int number2;
+
+                Console.Write("Say a number fella' (Table to be calculated) : ");
+                number2 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("\n");
+                for (number1 = 1; number1 <= 10; number1++)
+                {
+                    Console.Write("{0} X {1} = {2} \n", number2, number1, number2 * number1);
+
+                }
+                Console.WriteLine("AWESOMEEE");
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+    
+
+

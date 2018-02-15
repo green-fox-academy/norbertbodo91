@@ -1,0 +1,18 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            string user1 = "Mark";
+            string user2 = "David";
+            string user3 = "Peti";
+            Console.WriteLine("Hello " + user1);
+            Console.WriteLine("Hello " + user2);
+            Console.WriteLine("Hello " + user3);
+            Console.ReadLine();
+        }
+    }
+}

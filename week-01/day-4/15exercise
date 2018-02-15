@@ -1,0 +1,19 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                Console.Write("Enter distance in km: ");
+                string input1 = Console.ReadLine();
+                double number1 = Convert.ToInt32(input1);
+                double result1 = number1 * 0.65;
+                Console.Write(number1 + "Km's is equal to " + result1 + "Miles");
+                Console.ReadLine();
+            }
+        }
+    }
+}

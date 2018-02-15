@@ -1,0 +1,24 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                for (int i = 0; i <= 500; i++)
+                {
+                     if (i%2==0 && i!=0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                }
+            }
+        }
+    }
+}
+
+    
+
+

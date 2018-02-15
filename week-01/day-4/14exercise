@@ -1,0 +1,18 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+         Console.WriteLine("Yooo, What's your name?");
+            string name = Console.ReadLine();
+            Console.WriteLine("Yooo "+name +" have a nice day and keep codin' :)");
+            Console.ReadLine();
+
+
+        }
+    }
+}

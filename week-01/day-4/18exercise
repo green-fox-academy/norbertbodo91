@@ -1,0 +1,27 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                int i;
+                Console.Write("Yooo, what's your number : ");
+                i = int.Parse(Console.ReadLine());
+
+                if (i % 2 == 0)
+                {
+                    Console.Write("Your number it's EVEN!!!");
+                    Console.Read();
+                }
+                else
+                {
+                    Console.Write("Your number it's ODD!!!");
+                    Console.Read();
+                }
+            }
+        }
+    }
+}

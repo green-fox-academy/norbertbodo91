@@ -1,0 +1,23 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            // Swap the values of the variables
+            int a = 123;
+            int b = 526;
+
+            Console.WriteLine("Before: a {0} and b {1}", a, b);
+
+            b = b - a;
+            a = a + b;
+            b = a - b;
+
+            Console.WriteLine("After: a {0} and b {1}", a, b);
+            Console.ReadLine();
+        }
+    }
+}

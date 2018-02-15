@@ -1,0 +1,42 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                Console.Write("Type a number: ");
+                string number1 = Console.ReadLine();
+                double number11 = Convert.ToInt32(number1);
+
+                Console.Write("Type another number: ");
+                string number2 = Console.ReadLine();
+                double number22 = Convert.ToInt32(number2);
+
+                Console.Write("Type a third number: ");
+                string number3 = Console.ReadLine();
+                double number33 = Convert.ToInt32(number3);
+
+                Console.Write("Type a fourth number: ");
+                string number4 = Console.ReadLine();
+                double number44 = Convert.ToInt32(number4);
+
+                Console.Write("Type the last one: ");
+                string number5 = Console.ReadLine();
+                double number55 = Convert.ToInt32(number5);
+
+                double sum = number11 + number22 + number33 + number44 + number55;
+                double average = sum / 5;
+
+                Console.WriteLine("Sum: "+sum);
+                Console.WriteLine("Average: "+average);
+
+                Console.ReadLine();
+
+
+            }
+        }
+    }
+}

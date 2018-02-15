@@ -1,0 +1,42 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                int number1;
+                int number2;
+                Console.Write("What do u think how many girls are coming? ");
+                number1 = int.Parse(Console.ReadLine());
+
+                Console.Write("And How many boys tonight? ");
+                number2 = int.Parse(Console.ReadLine());
+
+
+                if (number1==number2 && number1+number2>20)
+                {
+                    Console.WriteLine("Huhuuuuu, it's going to be an excellent party!!");
+                }
+                if (number1+number1>20 && (number1 > number2 || number1 < number2))
+                {
+                    Console.WriteLine("Yeeee, it's going to be a cool party!!");
+                }
+                if (number1 + number1 <= 20 && (number1>0) && (number1 >= number2 || number1 <= number2 || number1 == number2))
+                {
+                    Console.WriteLine("It's going to be an average party dude!!!");
+                }
+                if (number1+number2<20 && number1==0 && number2!=0)
+                {
+                    Console.WriteLine("Prepare the grill dude... going to be a sausage party :(");
+                }
+            }
+        }
+    }
+}
+
+    
+
+

@@ -1,0 +1,28 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+            // An average Green Fox attendee codes 6 hours daily
+            // The semester is 17 weeks long
+            //
+
+            // Print how many hours is spent with coding in a semester by an attendee,
+            // if the attendee only codes on workdays.
+
+            // 1 week = 5 days * 6 hours = 30 hours/week  30hours*17week =510 hours a semester
+
+            Console.WriteLine((5*6)*17);
+            double semesterHours = 510;
+            double average = 17 * 52;
+            // Print the percentage of the coding hours in the semester if the average
+            // work hours weekly is 52
+            Console.WriteLine((semesterHours/average)*100 +"%" );
+            Console.ReadLine();
+        }
+    }
+}

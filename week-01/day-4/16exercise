@@ -1,0 +1,25 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                Console.Write("Give us a number about how many chicken we have: ");
+                string chicken = Console.ReadLine();
+                double chicken1 = Convert.ToInt32(chicken);
+                double chickenLegs = chicken1 * 2;
+
+                Console.Write("and pigs: ");
+                string pig = Console.ReadLine();
+                double pig1= Convert.ToInt32(pig);
+                double pigLegs = pig1 * 4;
+
+                Console.Write(pigLegs + chickenLegs+" legs we have all together in our farm");
+                Console.ReadLine();
+            }
+        }
+    }
+}

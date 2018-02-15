@@ -1,0 +1,19 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            string myName = "Norbert Bodo";
+            int age = 26;
+            double height = 1.75;
+
+            Console.WriteLine(myName);
+            Console.WriteLine(age);
+            Console.WriteLine(height + "m");
+            Console.ReadLine();
+        }
+    }
+}

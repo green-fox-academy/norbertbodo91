@@ -1,0 +1,31 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+            int currentHours = 14;
+            int currentMinutes = 34;
+            int currentSeconds = 42;
+            int maxHours = 24;
+            int maxMinutes = 60;
+            int maxSeconds = 60;
+
+            maxSeconds = maxSeconds * maxMinutes * maxHours;
+
+            currentSeconds = currentSeconds * currentMinutes * currentHours;
+
+            Console.WriteLine(maxSeconds-currentSeconds);
+            Console.ReadLine();
+
+            // Write a program that prints the remaining seconds (as an integer) from a
+            // day if the current time is represented by the variables
+
+
+
+        }
+    }
+}

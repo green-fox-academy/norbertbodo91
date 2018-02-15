@@ -1,0 +1,31 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+            // Define several things as a variable then print their values
+            // Your name as a string
+            string myName = "Norbert Bodo";
+            // Your age as an integer
+            int myAge = 26;
+            // Your height in meters as a double
+            double myHeight = 1.75;
+            // Whether you are married or not as a boolean
+            bool married = false;
+            Console.WriteLine(myName);
+            Console.WriteLine(myAge);
+            Console.WriteLine(myHeight + "m");
+            if (married == false)
+            {
+                Console.WriteLine("not married");
+            }
+          
+            Console.ReadLine();
+
+        }
+    }
+}
