@@ -1,0 +1,52 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                Random rnd = new Random();
+                int numberToGuess = rnd.Next(21);
+                int numberPlayer;
+                int life = 10;
+
+                Console.WriteLine("Guess a number between 0-20:");
+                numberPlayer = int.Parse(Console.ReadLine());
+
+
+                while (numberToGuess != numberPlayer && life > 0)
+                {
+                    if (numberToGuess > numberPlayer)
+                    {
+                        Console.WriteLine("Your number is lower!!  " + life + " lifes left");
+                    }
+                    if (numberPlayer > numberToGuess)
+                    {
+                        Console.WriteLine("Your number is 'HIGH'-er dude!!  " + life + " lifes left");
+                    }
+                    life--;
+
+                    Console.WriteLine("Guess again between 0-30:");
+                    numberPlayer = int.Parse(Console.ReadLine());
+
+                }
+
+
+                if (numberPlayer == numberToGuess)
+                {
+                    Console.WriteLine("Hoho you got it!! It was: " + numberToGuess);
+                }
+                else if (life == 0)
+                {
+                    Console.WriteLine("You ran out of lifes maaan :(");
+                }
+
+            }
+        }
+    }
+}
+
+
+
