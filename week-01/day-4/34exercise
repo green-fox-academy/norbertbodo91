@@ -1,0 +1,33 @@
+using System;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                int numberPlay;
+                double sum = 0;
+                double ave;
+
+                Console.WriteLine("please enter a number: ");
+               numberPlay = int.Parse(Console.ReadLine());
+
+
+                for (int i = 0; i < numberPlay; i++)
+                {
+                    Console.WriteLine(i+". number: ");
+                    sum = double.Parse(Console.ReadLine()) + sum;
+                }
+                ave = sum / numberPlay;
+                Console.WriteLine("All your numbers together: "+sum);
+                Console.WriteLine("Average of your numbers: " + ave);
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+
+
