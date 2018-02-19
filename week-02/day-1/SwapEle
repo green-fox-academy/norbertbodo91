@@ -1,0 +1,34 @@
+using System;
+
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            // - Create an array variable named `abc`
+            //   with the following content: `["first", "second", "third"]`
+            // - Swap the first and the third element of `abc`
+
+            string[] abc = { "first", "second", "third" };
+
+            Swap(abc, 0, 2);
+
+            foreach (var x in abc)
+            {
+                Console.WriteLine(x);
+            }
+
+        }
+        static void Swap(string[] array,int a, int b)
+        {
+            string csere = array[a];
+            array[a] = array[b];
+            array[b] = csere;
+        }
+     
+
+    }
+
+}

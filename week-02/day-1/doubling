@@ -1,0 +1,34 @@
+using System;
+
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                // - Create an integer variable named `ak` and assign the value `123` to it
+                // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
+                // - Print the result of `doubling(ak)`
+               
+
+                int ak = 123;
+                Console.WriteLine(doubling(ak));
+                Console.ReadLine();
+
+            }
+
+
+        }
+        public static int doubling(int x)
+        {
+            return x = x * 2;
+
+        }
+       
+    }
+}
+
+
+

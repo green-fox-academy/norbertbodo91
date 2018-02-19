@@ -1,0 +1,39 @@
+using System;
+
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            // - Write a function called `sum` that sum all the numbers
+            //   until the given parameter and returns with an integer
+            int input;
+
+            Console.WriteLine("please enter a number:");
+            input = int.Parse(Console.ReadLine());
+
+            int[] nums = new int[input - 1];
+            for (int i = 0; i < input-1; i++)
+            {
+                nums[i] = i + 2;
+            }
+
+            Console.WriteLine(Factorio(nums));
+            Console.ReadLine();  
+        }
+        public static int Factorio(int[] numbers)
+        {
+            int fact = 1;
+            foreach (var each in numbers)
+            {
+                fact = fact * each;
+            }
+            return fact;
+        }
+    }
+}
+
+
+
