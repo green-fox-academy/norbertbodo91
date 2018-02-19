@@ -28,7 +28,7 @@ namespace csprojects
                     }
                     life--;
 
-                    Console.WriteLine("Guess again between 0-30:");
+                    Console.WriteLine("Guess again between 0-20:”);
                     numberPlayer = int.Parse(Console.ReadLine());
 
                 }
