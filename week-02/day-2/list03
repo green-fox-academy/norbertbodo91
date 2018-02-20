@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            var planetList = new List<string> { "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune" };
+
+
+            // Saturn is missing from the planetList
+            // Insert it into the correct position
+            // Create a method called PutSaturn() which has list parameter and returns the correct list.
+            foreach (var item in PutSaturn(planetList))
+            {
+                Console.Write(" "+item);
+            }
+            //Console.WriteLine(PutSaturn(planetList));
+            // Expected output: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune", "Saturn"
+
+        }
+
+        public static List<String> PutSaturn(List<string> planet)
+        {
+            planet.Add("Saturn");
+            return planet;
+        }
+    }
+}

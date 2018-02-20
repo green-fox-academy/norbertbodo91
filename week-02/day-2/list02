@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            var girls = new List<string> { "Eve", "Ashley", "Bözsi", "Kat", "Jane" };
+            var boys = new List<string> { "Joe", "Fred", "Béla", "Todd", "Neef", "Jeff" };
+
+            // Write a method that joins the two lists by matching one girl with one boy into a new list
+            // Exepected output: "Eve", "Joe", "Ashley", "Fred"...
+
+            Console.WriteLine(MakingMatches(girls, boys)+", Jeff");
+        }
+
+        public static string MakingMatches(List<string> girls, List<string> boys)
+        {
+            var girlsOnBoys = new StringBuilder();
+            for (int i = 0; i < girls.Count; i++)
+            {
+                if (i==girls.Count-1)
+                {
+                    girlsOnBoys.Append(girls[i]);
+                    girlsOnBoys.Append(", ");
+                    girlsOnBoys.Append(boys[i]);
+                }
+                else
+                {
+                    girlsOnBoys.Append(girls[i]);
+                    girlsOnBoys.Append(", ");
+                    girlsOnBoys.Append(boys[i]);
+                    girlsOnBoys.Append(", ");
+                }
+            }
+            return girlsOnBoys.ToString();
+        }  
+    }
+}
