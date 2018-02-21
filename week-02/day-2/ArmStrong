@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+namespace StudentCounter
+{
+    public class StudentCounter
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Let's check a number if it's strong or not: ");
+
+            int armStrong = Convert.ToInt32(Console.ReadLine());
+
+            if (armStrong == isArmstrong(armStrong))
+            {
+                Console.WriteLine(armStrong+" - Yes,it is!");
+            }
+            else
+            {
+                Console.WriteLine(armStrong+" - No, it isn't...");
+            }
+
+            Console.ReadLine();
+        }
+        static int isArmstrong(int x)
+        {
+            int sum = 0;
+            for (int i = x; i > 0; i = i / 10)
+            {
+                sum = sum + (int)Math.Pow(i % 10, 3.0);
+            }
+
+            if (x == sum)
+                return sum;
+            else
+                return sum;
+         }
+
+        
+    }
+}
