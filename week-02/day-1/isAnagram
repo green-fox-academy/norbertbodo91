@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace csprojects
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            
+            Console.WriteLine("Type your word: ");
+            string word1 = Console.ReadLine();
+
+            Console.WriteLine("Type your second word: ");
+            string word2 = Console.ReadLine();
+
+            Console.WriteLine(IsAnagram(word1,word2));
+        }
+
+        public static bool IsAnagram(string a, string b)
+        {
+            if (a.Length != b.Length)
+                return false;
+            List<char> list1 = a.ToList();
+            List<char> list2 = b.ToList();
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (!list2.Remove(list1[i])) return false;
+
+            }
+            return true;
+
+
+        }
+
+
+    }
+
+}
