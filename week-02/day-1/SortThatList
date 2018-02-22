@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+
+namespace Yoo
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            //  Create a function that takes a list of numbers as parameter
+            //  Returns a list where the elements are sorted in ascending numerical order
+            //  Make a second boolean parameter, if it's `True` sort that list descending
+
+            //  Example:
+			//  should print [5, 9, 12, 24, 34]
+			//Console.WriteLine(AdvancedBubble(new int[] { 34, 12, 24, 9, 5 }, true));
+			//  should print [34, 24, 12, 9, 5]
+
+
+            int[] bubble={ 34, 12, 24, 9, 5 };
+            foreach (var x1 in Bubble(bubble))
+            {
+                Console.WriteLine(x1);
+            }
+            Console.WriteLine("-------");
+            foreach (var x2 in AdvancedBubble(bubble,false))
+            {
+                Console.WriteLine(x2);
+            }
+
+        }
+        public static int[] Bubble(int[] ascend)
+        {
+            for (int i = 0; i < ascend.Length; i++)
+            {
+                for (int j = 0; j < ascend.Length; j++)
+                {
+                    if (ascend[i]>ascend[j])
+                    {
+                        continue;
+                    }
+                    else if(ascend[i]<ascend[j])
+                    {
+                        int temp = ascend[j];
+                        ascend[j] = ascend[i];
+                        ascend[i] = temp;
+                    }
+                }
+            }
+            return ascend;
+        }
+        public static int[] AdvancedBubble(int[] desc, bool ifTrueOrNot)
+        {
+			if (ifTrueOrNot == true)
+			{
+                for (int i = 0; i < desc.Length; i++)
+                {
+                    for (int j = 0; j < desc.Length; j++)
+                    {
+                        if (desc[i] < desc[j])
+                        {
+                            continue;
+                        }
+                        else if (desc[i] > desc[j])
+                        {
+                            int temp = desc[j];
+                            desc[j] = desc[i];
+                            desc[i] = temp;
+                        }
+                    }
+
+                }
+				return desc;
+            }
+            else 
+            {
+                
+                Console.WriteLine(" ");
+                return new int[] { 0 };
+            }
+        }
+    }
+}
