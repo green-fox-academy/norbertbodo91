@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    public class TreeList
+    {
+        public List<Tree> Trees;
+       
+        public TreeList()
+        {
+            Trees = new List<Tree>();
+        }
+        public void Add(Tree tree)
+        {
+            Trees.Add(tree);
+        }
+        public List<Tree> List()
+        {
+            return Trees;
+        }
+        
+    }
+}
