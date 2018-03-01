@@ -14,7 +14,7 @@ namespace ConsoleApp3
 
             string word = Convert.ToString(Console.ReadLine());
 
-            Console.WriteLine("Entered Word with an X truned into y, watch : " + ConvertXToY(word));
+            Console.WriteLine("Entered Word with an X turned into y, watch : " + ConvertXToY(word));
 
             Console.Read();
         }
