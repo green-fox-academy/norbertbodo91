@@ -10,12 +10,15 @@ namespace ConsoleApp1
     {
         public int count;
         public string get;
+        public int countDefault;
         
        
        public Counter(int Count)
         {
             this.count = Count;
+            countDefault= count;
         }
+
         public void Add()
         {
             count++;
@@ -30,7 +33,7 @@ namespace ConsoleApp1
         }
         public void Reset()
         {
-            count=0;
+            count=countDefault;
         }
     }
 }
