@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MindUck
 {
@@ -8,7 +11,7 @@ namespace MindUck
         public MainWindow()
         {
             InitializeComponent();
-
+            
             var foxDraw = new FoxDraw(canvas);
 
             const float margin = 10;
@@ -24,9 +27,11 @@ namespace MindUck
         }
         public void DrawBrutalSquare(FoxDraw foxDraw, int level, Rect rect)
         {
-            
+            Random rnd = new Random();
+
             if (level == 0)
             {
+                foxDraw.FillColor(Color.FromRgb((byte)rnd.Next(255), (byte)rnd.Next(255), (byte)rnd.Next(255)));
                 foxDraw.DrawRectangle(rect.X,rect.Y,rect.Width,rect.Height); 
             }
             else
