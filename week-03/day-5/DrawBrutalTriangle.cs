@@ -3,9 +3,7 @@ using System.Windows.Media;
 
 namespace TestTriangle
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -21,11 +19,7 @@ namespace TestTriangle
             Point rightPoint = new Point(canvas.Width, canvas.Height);
 
             Point[] point = new Point[3] {topPoint,leftPoint,rightPoint };
-            
-            
-            
-           
-
+                                               
             DrawBrutalTriangle(foxDraw, level, topPoint, leftPoint, rightPoint);
         }
         public void DrawBrutalTriangle(FoxDraw foxDraw, int level, Point topPoint, Point leftPoint, Point rightPoint)
