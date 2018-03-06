@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace HomeWorkMarc5
 {
-    class Mentor
+    class Mentor : Person
     {
-        private string name;
-        private int age;
-        private string gender;
-        private string level;
+         
+         string level;
 
-        public Mentor(string Name, int Age, string Gender, string Level)
+        public Mentor(string name, int age, string gender, string Level) :base(name,age,gender)
         {
-            this.name = Name;
-            this.age = Age;
-            this.gender = Gender;
+          
             this.level = Level;
         }
-        public void GetGoal()
+        public Mentor()
         {
-            Console.WriteLine("Educate brilliant junior software developers");
+            level = "intermediate";
         }
-        public void Introduce()
+        public override string GetGoal()
         {
-            Console.WriteLine("Hi, I'm "+name+", "+age+" year old "+gender+" "+level+" mentor.");
+            return base.GetGoal() + " Educate brilliant junior software developers";
+        }
+        public override string Introduce()
+        {
+            return base.Introduce() + " "+level+" mentor.";
         }
 
     }

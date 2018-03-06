@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 
 namespace HomeWorkMarc5
 {
-    class Student
+    class Student : Person
     {
-        private string name;
-        private int age;
-        private string gender;
-        private string previousOrganization;
-        private int skippedDays;
+       
+         string previousOrganization;
+         int skippedDays;
         
-
-        public Student(string Name, int Age, string Gender, string PreviousOrganization)
-        {
-            this.name = Name;
-            this.age = Age;
-            this.gender = Gender;
+        public Student(string name, int age, string gender, string PreviousOrganization) : base(name,age,gender)
+        {        
             this.previousOrganization = PreviousOrganization;
             skippedDays = 0;
         }
-        public void Introduce()
-        {
-            Console.WriteLine("Hi, I'm " + name + ", " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
+        public Student()
+        {       
+            previousOrganization = "The School of Life";
+            skippedDays = 0;
         }
-        public void GetGoal()
+        public override string Introduce()
         {
-            Console.WriteLine("Be a junior software developer.");
+           return base.Introduce() + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.";
         }
-        public int SkipDays(int numberOfDays)
+        public override string GetGoal()
         {
-           return skippedDays = skippedDays + numberOfDays;
+            return base.GetGoal() + " Be a junior software developer.";
+        }
+        public void SkipDays(int numberOfDays)
+        {
+           skippedDays += numberOfDays;
         }
 
     }

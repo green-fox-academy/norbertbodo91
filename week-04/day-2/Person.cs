@@ -8,9 +8,9 @@ namespace HomeWorkMarc5
 {
     class Person
     {
-        private string name;
-        private int age;
-        private string gender;
+         protected string name;
+         protected int age;
+         protected string gender;
 
         public Person(string Name,int Age,string Gender)
         {
@@ -18,13 +18,19 @@ namespace HomeWorkMarc5
             this.age = Age;
             this.gender = Gender;
         }
-        public void Introduce()
+        public Person()
         {
-            Console.WriteLine("Hi, I'm "+name+", "+age+" year old "+gender);
+            this.name = "Jane Doe";
+            this.age = 30;
+            this.gender = "female";
         }
-        public void GetGoal()
+        public virtual string Introduce()
         {
-            Console.WriteLine("My goal is:Live for the moment!");
+           return  "Hi, I'm "+name+", "+age+" year old "+gender;
+        }
+        public virtual string GetGoal()
+        {
+            return "My goal is:Live for the moment!";
         }
         
     }

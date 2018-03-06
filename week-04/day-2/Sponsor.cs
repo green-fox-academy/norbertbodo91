@@ -6,33 +6,33 @@ using System.Threading.Tasks;
 
 namespace HomeWorkMarc5
 {
-    class Sponsor
+    class Sponsor : Person
     {
-        private string name;
-        private int age;
-        private string gender;
-        private string company;
-        private int hiredStudents;
+        
+         string company;
+         int hiredStudents;
 
-        public Sponsor(string Name,int Age,string Gender,string Company)
-        {
-            this.name = Name;
-            this.age = Age;
-            this.gender = Gender;
+        public Sponsor(string name,int age,string gender,string Company) :base(name,age,gender)
+        {           
             this.company = Company;
+            
+        }
+        public Sponsor()
+        {      
+            company = "Google";
             hiredStudents = 0;
         }
-        public void Introduce()
+        public override string Introduce()
         {
-            Console.WriteLine("Hi, I'm"+ name+" , a " + age + " year old "+ gender +" who represents "+ company +" and hired "+ hiredStudents +" students so far.");
+            return base.Introduce() +" who represents "+ company +" and hired "+ hiredStudents +" students so far.";
         }
-        public int Hire()
+        public void Hire()
         {
-            return hiredStudents++;
+            hiredStudents++;
         }
-        public void GetGoal()
+        public override string GetGoal()
         {
-            Console.WriteLine("Hire brilliant junior software developers.");
+           return base.GetGoal() + " Hire brilliant junior software developers.";
         }
     }
 }
