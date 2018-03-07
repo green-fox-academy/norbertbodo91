@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Flyable
+namespace Zoo
 {
     interface IFlyable
     {
+        void Fly();
+        void TakeOff();
+        void Land();    
     }
 }

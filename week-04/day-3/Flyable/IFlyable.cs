@@ -8,5 +8,8 @@ namespace Flyable
 {
     interface IFlyable
     {
+        void Fly();
+        void TakeOff();
+        void Land();
     }
 }
