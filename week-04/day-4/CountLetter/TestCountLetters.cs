@@ -11,9 +11,9 @@ namespace TestCountLetter
         {
             ClassCountLetter word = new ClassCountLetter();
 
-            string input = "jozsi";
+            string input = "jjjozsi";
 
-            Assert.AreEqual(0, word.CountMyLetter(input)['j']);
+            Assert.AreEqual(2, word.CountMyLetter(input)['j']);
         }
     }
 }

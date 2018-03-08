@@ -9,10 +9,17 @@ namespace Countletter
         public Dictionary<char, int> CountMyLetter(string countWord)
         {
             var dictWord = new Dictionary<char, int>();
-            char[] countWordArray = countWord.ToCharArray();
-            for (int i = 0; i < countWordArray.Length; i++)
+            
+            for (int i = 0; i < countWord.Length; i++)
             {
+                if (dictWord.ContainsKey(countWord[i]))
+                {
+                    dictWord[countWord[i]]++;
+                }
+                else
+                {
                 dictWord.Add(countWord[i],i);
+                }
             }
             return dictWord;
         }
