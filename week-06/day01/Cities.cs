@@ -15,7 +15,15 @@ namespace LinQ
                            where city.EndsWith('I')
                            select city;
 
+            var sortCity2 = cities.Where(x => x.StartsWith('A'))
+                                  .Where(x => x.EndsWith('I'));
+
             foreach (var city in sortCity)
+            {
+                Console.WriteLine(city);
+            }
+            Console.WriteLine();
+            foreach (var city in sortCity2)
             {
                 Console.WriteLine(city);
             }
