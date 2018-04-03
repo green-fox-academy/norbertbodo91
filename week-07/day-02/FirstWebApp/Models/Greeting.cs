@@ -15,5 +15,10 @@ namespace FirstWebApp.Models
         {
             Id = counter++;
         }
+        public Greeting(string content)
+        {
+            Id = counter++;
+            Content = content;
+        }
     }
 }

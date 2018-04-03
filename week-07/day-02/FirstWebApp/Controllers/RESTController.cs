@@ -13,7 +13,7 @@ namespace FirstWebApp.Controllers
         [Route("greeting")]
         public IActionResult Greeting(string name)
         {
-            var greeting = new Greeting();
+            var greeting = new Greeting(name);
             
             return new JsonResult(greeting);
         }
