@@ -9,16 +9,37 @@ using SimbaBankAccount.Models;
 
 namespace SimbaBankAccount.Controllers
 {
+    [Route("accounts")]
     public class BankController : Controller
     {
-        [Route("Simba")]
+        [Route("simba")]
         public IActionResult Simba()
         {
-            var accounts = new List<BankAccount>();
+            return View();
+        }
 
-            accounts.Add(new BankAccount() { Name = "Simba", Balance = 2000.00, AnimalType = "Lion", IsKing = true });
+        [HttpGet]
+        [Route("all")]
+        public IActionResult All()
+        {
+            return View(BankAccountList.Accounts);
+        }
 
-            return View(accounts);
+        [HttpPost]
+        [Route("add")]
+        public IActionResult All(int index)
+        {
+            var bank = new BankAccountList();
+
+            if (BankAccountList.Accounts[index - 1].IsKing)
+            {
+                BankAccountList.Accounts[index - 1].Balance += 100;
+            }
+            else
+            {
+                BankAccountList.Accounts[index - 1].Balance += 10;
+            }
+            return View(BankAccountList.Accounts);
         }
     }
 }

@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Bank Accounts </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table style="width: 100%">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Race</th>
+                <th>Good Or Bad</th> 
+            </tr>
+            
+        @{foreach (var account in @Model) 
+              {
+                <tr> 
+                    <td>@account.Id</td>
+                    <td>@account.Name</td>
+                    <td>@account.FormatOfBalance() bone$ </td>
+                    <td>@account.AnimalType</td>
+                    <td>@account.GoodOrBad()</td>
+                    <td>@account.KingOrNotKing()</td>
+                </tr>
+              }                
+         }
+    </table>
+        <form action="Add" method="post">
+        <input type="number" name="index" />
+        <input type="submit" value="EGYÉ PÉNZ" />   
+        </form>
+</body>
+</html>
