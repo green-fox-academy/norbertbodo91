@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebappREST.Models;
 
 namespace WebappREST.Controllers
 {
@@ -58,6 +59,25 @@ namespace WebappREST.Controllers
         public IActionResult AppendA()
         {
             return NotFound();
+        }
+
+        [HttpPost]
+        [Route("/dountil/{what}")]
+        public IActionResult DoUntil(string what, [FromBody] UntilClass until)
+        {
+            if (what == "sum")
+            {
+                if (until.Until == null)
+                {
+                    return Json(new { error = "Please provide a number!" });
+                }
+                return Json(new { result = until.Sum()});
+            }
+            if (what == "factor")
+            {                
+                return Json(new { result = until.Factor()});
+            }
+            return Json(new { error = "Please provide a number!" });
         }
     }
 }
