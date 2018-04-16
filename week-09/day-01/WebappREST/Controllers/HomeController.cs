@@ -79,5 +79,46 @@ namespace WebappREST.Controllers
             }
             return Json(new { error = "Please provide a number!" });
         }
+
+        [HttpPost]
+        [Route("/arrays")]
+        public IActionResult Arrays([FromBody] ArrayClass array)
+        {
+            if (array.What == "sum")
+            {
+                if (array.Numbers == null)
+                {
+                    return Json(new { error = "Please provide what to do with the numbers!" });
+                }
+                else
+                {
+                    return Json(new { result = array.Sum() });
+                }
+            }
+            else if (array.What == "multiply")
+            {
+                if (array.Numbers == null)
+                {
+                    return Json(new { error = "Please provide what to do with the numbers!" });
+                }
+                else
+                {
+                    return Json(new { result = array.Multiply() });
+                }
+            }
+            else if (array.What == "double")
+            {
+                if (array.Numbers == null)
+                {
+                    return Json(new { error = "Please provide what to do with the numbers!" });
+                }
+                else
+                {
+                    return Json(new { result = array.Double() });
+                }
+            }
+
+            return Json(new { error = "Please provide what to do with the numbers!" });
+        }
     }
 }
