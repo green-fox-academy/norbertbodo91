@@ -26,7 +26,7 @@ namespace WebappREST
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(); 
             app.UseStaticFiles();
             app.UseDefaultFiles();
         }
