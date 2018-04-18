@@ -11,15 +11,10 @@ namespace RedditBackend.Controllers
     public class HomeController : Controller
     {
         ICrudRepository<Post> postRepo;
-        ICrudRepository<User> userRepo;
 
         public HomeController(ICrudRepository<Post> postRepository)
         {
             postRepo = postRepository;
-        }
-        public HomeController(ICrudRepository<User> userRepository)
-        {
-            userRepo = userRepository;
         }
 
         [HttpGet]
@@ -27,14 +22,6 @@ namespace RedditBackend.Controllers
         public IActionResult Index()
         {
             return Json(postRepo.Read().OrderByDescending(x=>x.Vote));
-        }
-
-        [HttpGet]
-        [Route("createuser")]
-        public IActionResult CreateUser(string name)
-        {
-            userRepo.Create(new User { Name = name });
-            return RedirectToAction("index");
         }
 
         [HttpGet]
