@@ -1,4 +1,5 @@
-﻿using RedditBackend.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using RedditBackend.Entities;
 using RedditBackend.Models;
 using RedditBackend.Services;
 using System;
@@ -32,6 +33,7 @@ namespace RedditBackend.Repositories
 
         public List<Post> Read()
         {
+            db.UserList.Load();
             return db.PostList.ToList();
         }
 

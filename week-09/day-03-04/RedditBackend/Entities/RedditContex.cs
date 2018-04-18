@@ -12,8 +12,15 @@ namespace RedditBackend.Entities
         public DbSet<Post> PostList { get; set; }
         public DbSet<User> UserList { get; set; }
 
-        public RedditContex(DbContextOptions<RedditContex>options ):base(options)
+        public RedditContex(DbContextOptions options):base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.Posts)
+                .WithOne(p => p.User);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace RedditBackend.Repositories
         }
 
         public void Create(User user)
-        {
+        {            
             db.Add(user);
             db.SaveChanges();
         }
