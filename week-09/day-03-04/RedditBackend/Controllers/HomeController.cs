@@ -21,28 +21,28 @@ namespace RedditBackend.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            return Json(postRepo.Read().OrderByDescending(x=>x.Vote));
+            return new OkObjectResult(postRepo.Read());
         }
 
-        [HttpGet]
-        [Route("createpost")]
-        public IActionResult CreatePost(string title, string url)
+        [HttpPost]
+        [Route("post")]
+        public IActionResult CreatePost([FromBody] Post post)
         {
-            postRepo.Create(new Post { Title = title, URL = url });
-            return RedirectToAction("index");
+            postRepo.Create(post);
+            return new OkObjectResult(post);
         }
         
-        [HttpGet]
-        [Route("{id}/upvote")]
-        public IActionResult UpVotePost(int id)
+        [HttpPost]
+        [Route("upvote")]
+        public IActionResult UpVotePost([FromBody] int id)
         {
             postRepo.UpVote(id);
             return RedirectToAction("index");
         }
 
-        [HttpGet]
-        [Route("{id}/downvote")]
-        public IActionResult DownVotePost(int id)
+        [HttpPost]
+        [Route("downvote")]
+        public IActionResult DownVotePost([FromBody] int id)
         {
             postRepo.DownVote(id);
             return RedirectToAction("index");

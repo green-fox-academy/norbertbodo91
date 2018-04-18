@@ -17,12 +17,12 @@ namespace RedditBackend.Controllers
             userRepo = userRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("createuser")]
-        public IActionResult CreateUser(string name)
+        public IActionResult CreateUser([FromBody]User user)
         {
-            userRepo.Create(new User { Name = name });
-            return RedirectToAction("index");
+            userRepo.Create(user);
+            return new OkObjectResult(user);
         }
     }
 }
