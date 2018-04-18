@@ -10,6 +10,7 @@ namespace RedditBackend.Entities
     public class RedditContex : DbContext
     {
         public DbSet<Post> PostList { get; set; }
+        public DbSet<User> UserList { get; set; }
 
         public RedditContex(DbContextOptions<RedditContex>options ):base(options)
         {

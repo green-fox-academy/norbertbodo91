@@ -10,11 +10,16 @@ namespace RedditBackend.Controllers
 {
     public class HomeController : Controller
     {
-        IPostRepository<Post> postRepo;
+        ICrudRepository<Post> postRepo;
+        ICrudRepository<User> userRepo;
 
-        public HomeController(IPostRepository<Post> postRepository)
+        public HomeController(ICrudRepository<Post> postRepository)
         {
             postRepo = postRepository;
+        }
+        public HomeController(ICrudRepository<User> userRepository)
+        {
+            userRepo = userRepository;
         }
 
         [HttpGet]
@@ -25,10 +30,18 @@ namespace RedditBackend.Controllers
         }
 
         [HttpGet]
-        [Route("createpost")]
-        public IActionResult CreatePost(string Title, string URL)
+        [Route("createuser")]
+        public IActionResult CreateUser(string name)
         {
-            postRepo.Create(Title, URL);
+            userRepo.Create(new User { Name = name });
+            return RedirectToAction("index");
+        }
+
+        [HttpGet]
+        [Route("createpost")]
+        public IActionResult CreatePost(string title, string url)
+        {
+            postRepo.Create(new Post { Title = title, URL = url });
             return RedirectToAction("index");
         }
         

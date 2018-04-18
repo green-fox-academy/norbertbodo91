@@ -22,7 +22,8 @@ namespace RedditBackend
         {
             var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RedditBackEnd;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddMvc();
-            services.AddScoped<IPostRepository<Post>, PostRepo>();
+            services.AddScoped<ICrudRepository<Post>, PostRepo>();
+            services.AddScoped<ICrudRepository<User>, UserRepo>();
             services.AddDbContext<RedditContex>(options => options.UseSqlServer(connection));
         }
 

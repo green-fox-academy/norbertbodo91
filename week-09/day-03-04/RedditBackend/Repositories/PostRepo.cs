@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RedditBackend.Repositories
 {
-    public class PostRepo : IPostRepository<Post>
+    public class PostRepo : ICrudRepository<Post>
     {
         private RedditContex db;
 
@@ -17,9 +17,9 @@ namespace RedditBackend.Repositories
             db = ctx;
         }
 
-        public void Create(string title, string url)
+        public void Create(Post post)
         {
-            db.Add(new Post { Title = title, URL = url, TimeStamp = DateTime.Now });
+            db.Add(post);
             db.SaveChanges();
         }
 
