@@ -20,26 +20,29 @@ namespace SpaceShipApp.Entities
         {
             Spaceship transport = db.Spaceship.FirstOrDefault();
             Planet planet = db.Planet.FirstOrDefault(x => x.Name == transport.Planet);
-
-            if (transport.Utilization > 0)
-            {
-                planet.Population++;
-                transport.Utilization--;
-                db.SaveChanges();
-            }
+            int fleet = transport.Utilization;
+            planet.Population += fleet;
+            transport.Utilization -= fleet;            
+            db.SaveChanges();            
         }
 
         public void GetOnBorad()
         {
             Spaceship transport = db.Spaceship.FirstOrDefault();
             Planet planet = db.Planet.FirstOrDefault(x=> x.Name == transport.Planet);
+            int fleet = transport.MaxCapacity - transport.Utilization;
 
-            if (transport.MaxCapacity > transport.Utilization && planet.Population > 0)
+            if (fleet <= planet.Population)
             {
-                planet.Population--;
-                transport.Utilization++;
-                db.SaveChanges();
+                transport.Utilization += fleet;                
+                planet.Population -= fleet;
             }
+            else
+            {
+                transport.Utilization += Convert.ToInt32(planet.Population);
+                planet.Population -= planet.Population;
+            }
+            db.SaveChanges();
         }
 
         public void Move(int id)
