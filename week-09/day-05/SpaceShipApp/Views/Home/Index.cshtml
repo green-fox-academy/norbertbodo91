@@ -1,0 +1,44 @@
+﻿      <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Planet</th>
+            <th>Population</th>
+            <th>Spaceship location</th>
+            <th>Crew</th>
+        </tr>
+        @foreach (var planet in Model.Planets)
+        {
+            <tr>
+                <td>@planet.Name</td>
+                <td>@planet.Population</td>
+                <td>
+                    @if (Model.SpaceShip.Planet == planet.Name)
+                    {
+                        <a href="toplanet">to planet</a><a href="toship">to ship</a>
+                    }
+                    else
+                    {
+                        <form action="move/@planet.Id" method="post">
+                            <input type="submit" value="move" />
+                        </form>
+                    }
+                </td>
+                <td>
+                    @if (Model.SpaceShip.Planet == planet.Name)
+                    {
+                        @Model.SpaceShip.Utilization
+                    }
+                    else
+                    {
+                        <p>-</p>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
